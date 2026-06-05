@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        Enter Email Id: <br>
+        <input type="text"><br>
+        <input type="checkbox" id="terms">Accept Terms & Conditions <br>
+        <input type="submit">
+    </form>
+    <script>
+        function validate(){
+            if(!document.getElementById("terms").checked){
+                alert("Accept TErms & Conditions");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

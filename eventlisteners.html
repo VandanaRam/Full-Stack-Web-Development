@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event LIsteners</title>
+</head>
+<body id="theme">
+    <h1>Event Listeners</h1>
+    <button id="btn">Single Click</button>
+    <p id="msg"></p>
+    <button id="btn2">Double Click</button>
+    <p id="msg2"></p>
+    <input type="text" id="username" placeholder="Enter Your Name">
+    <p id="user"></p>
+    <input type="text" id="username2" placeholder="Enter Your Name">
+    <p id="user2"></p>
+    <label for="change">Change BG Color</label>
+    <select name="bgcolor" id="bgcolor">
+        <option value="lightblue">Light Blue</option>
+        <option value="lightgreen">Light Green</option>
+        <option value="orange">Orange</option>
+    </select>
+    <p>
+        Some lines of Text
+    </p>
+    <script>
+        document.getElementById("btn").addEventListener("click",()=>{
+            document.getElementById("msg").textContent="Button clicked";
+        });
+        document.getElementById("btn2").addEventListener("dblclick",()=>{
+            document.getElementById("msg2").textContent="Button clicked 2 times";
+        });
+        document.getElementById("username").addEventListener("input",function(){
+            document.getElementById("user").textContent="User Typing";
+        })
+        document.getElementById("username2").addEventListener("input",function(){
+            document.getElementById("user2").textContent="User Typing : " + this.value;
+        })
+        document.getElementById("bgcolor").addEventListener("change",function(){
+            document.getElementById("theme").style.backgroundColor=this.value;
+        })
+    </script>
+</body>
+</html>

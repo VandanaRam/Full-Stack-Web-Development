@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: rgb(220, 252, 220);
+        }
+        header{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .highlight
+        {
+            color:green;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav{
+            display: flex;
+            gap:30px;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        nav a:hover{
+            color: green;
+            text-decoration: underline;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 3px;
+        }
+        .full-image
+        {
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+            display: block;
+        }
+        div:has(>.full-image)
+        {
+            position: relative;
+            width: 100%;
+        }
+        .text
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 80px;
+            max-width: 600px;
+            line-height: 70px;
+            font-size: 40px;
+        }
+        .result
+        {
+            display: flex;
+        }
+        .tables
+        {
+            position: absolute;
+            top: 300px;
+            margin: 50px 150px;
+            display: flex;
+            gap: 50px;
+        }
+        .input{
+            width: 400px;
+            background-color: blanchedalmond;
+            text-align: left;
+            padding: 50px;
+            line-height: 30px;
+        }
+        .output{
+            width: 550px;
+            background-color: blanchedalmond;
+            text-align: left;
+            padding: 50px;
+            line-height: 30px;
+            margin-top: 20PX;
+        }
+        .main
+        {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h2><span class="highlight">BMI</span> Calculator</h2>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Calculator</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>            
+        </nav>
+    </header>
+    <section class="main">
+        <div>
+            <img src="./Screenshot 2026-06-05 125540.png" class="full-image">
+            <div class="text">
+                <h1><span class="highlight">BMI</span> Calculator</h1>
+                <div>Calculate your Body Mass Index and check your status.</div>
+            </div>
+        </div>
+    
+    <section class="tables">
+        <div class="input">
+            <h2>Enter Your Details</h2>
+            <label>Height (cm)</label><br>
+            <input type="number" placeholder="Enter your height in centimeters"><br>
+            <label>Weight (kg)</label><br>
+            <input type="number" placeholder="Enter your weight in kilograms"><br>
+            <button>Calculate BMI</button>
+        </div>
+        <div class="output">
+            <h3>Your BMI Result</h3>
+            <div class="result">
+            <div>
+                <h4>Your BMI</h4>
+                <h1>0.00</h1>
+            </div>
+            <div>
+                <h4>Category</h4>
+                <h1>-</h1>
+            </div>
+            </div>
+        </div>
+    </section>
+</section>
+</body>
+</html>

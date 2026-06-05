@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 5</title>
+</head>
+<body>
+    <script>
+        let cities=["Hyd","Banglore","Chennai","Delhi"];
+        document.write("Complete Array : " + cities +"<br><br>");
+        document.write("First City : "+ cities[0]+"<br>");
+        document.write("Second City : "+ cities[1]+"<br>");
+        document.write("Third City : "+ cities[2]+"<br>");
+        document.write("<h1>PUSH and POP</h1>");
+        let students=["Rahul","Anil","Kiran"];
+        document.write("Original Array : "+ students+"<br>");
+        students.push("Sunny");
+        document.write("After PUSH : "+students+"<br>");
+        students.pop();
+        document.write("After pop : "+students);
+        document.write("<h1>Splice()</h1>");
+        students.splice(1,1);
+        document.write("After Slice : "+students+"<br>");
+        let index=students.indexOf('Rahul');
+        if(index!==-1){
+            students.splice(index,1);
+        }
+        document.write("Students array now : "+students+"<br>");
+        let marks=[82 , 90, 88, 95];
+        for(let i=0;i<marks.length;i++)
+        {
+            document.write("Students "+(i+1)+"Marks : "+marks[i]+"<br>");
+        }
+        document.write("<h1>Filter()</h1>");
+        let mark=[23,45,78,56,89,67];
+        let passedStudents=mark.filter(function(mark){
+            return mark>=50;
+        });
+        document.write("Original Marks : "+mark+"<br>");
+        document.write("Passed Students : "+ passedStudents);
+        let updatedMarks=mark.filter(function(mark){
+            return mark+5;
+        });
+        document.write("Original Marks : "+mark+"<br>");
+        document.write("Passed Students : "+ updatedMarks);
+        document.write("<h1>Student Object</h1>");
+        let student={
+            name:'vandana',
+            age:20,
+            course:'JavaScript',
+            marks:85,
+            address:{
+                city:"KURNOOL",
+                state:"AP",
+                pincode:518007,
+            }
+        };
+        document.write("<h2>Student Details</h2>");
+        document.write("Name : "+student.name+"<br>");
+        document.write("Age : "+student.age+"<br>");
+        document.write("Course : "+student.course+"<br>");
+        document.write("Marks : "+student.marks+"<br>");       
+        student.marks=90;
+        document.write("Upadated Marks : "+student.marks+"<br>");
+        document.write("<h1>Nested Object</h1>");
+        document.write("<h3>Address</h3>");
+        document.write("City : "+student.address.city+"<br>");
+        document.write("State : "+student.address.state+"<br>");
+        document.write("PinCode : "+student.address.pincode+"<br>")
+    </script>
+</body>
+</html>

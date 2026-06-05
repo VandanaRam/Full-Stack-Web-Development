@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .darkmode{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body id="theme">
+    <h1>DOM-Document Object Model</h1>
+    <p class="Item">Item One</p>
+    <p class="Item">Item two</p>
+    <button onclick="makebold()">Make Text Bold</button>
+    <h3 class="title">Heading One</h3>
+    <h3 class="title">Heading two</h3>
+    <button onclick="color()">Change Color</button>
+    <ul>
+        <li class="li">A</li>
+        <li class="li">B</li>
+        <li class="li">C</li>
+    </ul>
+    <button onclick="paint()">Paint ALL</button>
+    <h2 id="title">Welcome</h2>
+    <button onclick="styleIt()">Apply Style</button>
+    <h1>About Us</h1>
+    <p>
+        Some Lines of Text
+        Some Lines of Text
+        Some Lines of Text
+        Some Lines of Text
+        Some Lines of Text
+        Some Lines of Text
+    </p>
+    <button onclick="toggleHi()">Change MOde</button>
+    <br>
+    <h1>setAttribute() & getAttribute()</h1>
+    <a href="https://gprec.ac.in" id="link">Open Link</a>
+    <br><br>
+    <button onclick="changeLink()">Change to Google</button>
+    <br><h1></h1>
+    <script>
+        function makebold(){
+            var items=document.getElementsByClassName("Item");
+            for(var i=0;i<items.length;i++)
+        {
+            items[i].style.fontWeight="bold";
+        }
+        }
+        function color()
+        {
+            document.querySelector('.title').style.color="blue"; 
+        }
+        function paint()
+        {
+            var all=document.querySelectorAll('.li');
+            all.forEach(function(X){
+                X.style.background="brown";
+                X.style.fontWeight="bold";
+            });
+        }
+        function styleIt(){
+            var t=document.getElementById("title");
+            t.style.color="blue";
+            t.style.backgroundColor="lightgrey";
+            t.style.padding="10px";
+        }
+        function toggleHi(){
+            document.getElementById("theme").classList.toggle('darkmode')
+        }
+        function changeLink(){
+            var a=document.getElementById("link");
+            alert("Old href : " + a.getAttribute("href"));
+            a.setAttribute("href","https://google.com");
+            a.textContent="Go to Google";
+        }
+        
+    </script>
+</body>
+</html>

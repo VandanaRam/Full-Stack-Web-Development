@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        .main{
+            display: flex;
+            height: 100vh;
+            margin: 40px;
+        }
+        .main-first{
+            flex: 1;
+            background-image: url("./summer-background-with-sailboats-and-seagulls_NMW.webp");
+            background-size:cover;
+            background-position: center;
+        }
+        .main-second{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main-first">
+
+        </div>
+        <div class="main-second">
+            <h1>Welcome Back</h1>
+            <p>Login to your to continue</p>
+            <form>
+                Email <br>
+                <input type="email" id="email" placeholder="Enter Your Email"><br>
+                Password <br>
+                <input type="password" id="pass" placeholder="Enter Your Password"><br>
+                <input type="checkbox" id="rem">Remember me 
+                <a href="#">Forget Password?</a><br>
+                <button>Login</button>
+                <p>or</p>
+                <button>Login with Google</button>
+                <p>Don't have an account? <a href="#">Register here</a></p>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
