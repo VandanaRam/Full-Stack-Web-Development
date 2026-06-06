@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="name" id="text" placeholder="Write notes"></textarea>
+    <script>
+        var note=document.getElementById("text");
+        note.value=localStorage.getItem("notes")||"";
+        note.addEventListener("input",function(){
+            localStorage.setItem("notes",note.value);
+        });
+    </script>
+</body>
+</html>

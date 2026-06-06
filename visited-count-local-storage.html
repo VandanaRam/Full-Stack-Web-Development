@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="visits"></p>
+    <script>
+        var v=localStorage.getItem("visits") || 0;
+        v++;
+        localStorage.setItem("visits",v);
+        document.getElementById("visits").textContent="Total Visits: " + v ;
+    </script>
+</body>
+</html>

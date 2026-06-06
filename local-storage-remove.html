@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="remove()">Remove Username</button>
+    <script>
+        function remove()
+        {
+            localStorage.removeItem("username");
+            alert("Removed !");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"> </ul>
+    <button onclick="addItem()">Add Item</button>
+    <div id="some"></div>
+    <script>
+        let n=1;
+        function addItem(){
+            var li=document.createElement("li");
+            li.textContent="Item"+n;
+            document.getElementById("list").appendChild(li);
+            var div=document.createElement("div");
+            div.textContent="Some Text line "+ n;
+            document.getElementById("some").appendChild(div);
+            n++;
+        }
+    </script>
+</body>
+</html>

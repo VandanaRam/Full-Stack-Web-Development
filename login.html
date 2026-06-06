@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body
+        {
+            background-color: aliceblue;
+            overflow: hidden;
+           
+           
+        }
+        .first
+        {
+            margin-top: 40px;
+            margin-left: 200px;
+        }
+        .main
+        {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            height: 90vh;
+            width: 70vw;
+            gap: 20px;
+            background-image: url("/home/ecs/Downloads/summer-background-with-sailboats-and-seagulls_NMW.webp");
+            background-repeat: no-repeat;
+            background-size: 50%;
+            position: absolute;
+            display: flex;
+        }
+        .headtext{
+            position: relative;
+            top: 100px;
+            left: 120px;
+            font-size: 40px;
+            color: rgb(39, 145, 206);
+        }
+        .subtext{
+            position: relative;
+            top: 110px;
+            left: 120px;
+            font-size: 20px;
+            line-height: 30px;
+        }   
+        .min{
+            position: relative;
+            left: 400px;
+            top: 90px;
+            line-height: 50px;
+            height: 90vh;
+            width: 90vw;
+        }
+        .min h1{
+            font-size: 45px;
+        }
+        .min p{
+            color: rgba(0,0,0,0.6);
+            font-size: 16px;
+        }
+        input[type="email"],input[type="password"],input[type="button"]{
+            width: 400px;
+            height: 50px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        input[type="button"]{
+            background-color: rgb(39, 145, 206);
+            color: white;
+        }
+        .forget{
+            text-decoration: none;
+            margin-left:140px ;
+        }
+        .line{
+            color: rgba(0,0,0,0.01 );
+            margin-left: 60px;
+        }
+        .register{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+    <div class="main">
+        <div>
+        <h1 class="headtext">Welcome Back</h1>
+        <p class="subtext">Glad to see you again! Please login to <br> continue your jouney.</p>
+        </div>
+        <div class="min">
+            <h1>Welcome Back</h1>
+            <p class="sub">Login to your account to continue</p>
+                <label for="email">Email</label><br>
+                <input type="email" placeholder="       Enter your email"><br>
+                <label for="password">Password</label><br>
+                <input type="password" placeholder="       Enter your password"><br>
+                <input type="checkbox" name="remember" id="check"> Remember me           
+                <a class="forget" href="forgetpassword.html">Forget Password?</a><br>
+                <input type="button" value="Login" onclick="validate()">
+                <br>
+                <p class="line">———————— or ————————</p>
+                <input type="button" value="Login with Google"> 
+                <p>Don't have an account? <a class="register" href="register.html"> Register here</a></p>
+        </div>
+    </div>
+    </div>
+    <script>
+        function validate(){
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .light{
+            background-color: aquamarine;
+            color: black;
+        }
+    </style>
+</head>
+<body id="page">
+    <button onclick="toggle()">Toggle Theme</button>
+    <script>
+        if(localStorage.getItem("theme") === "dark"){
+            document.getElementById("page").classList.add("dark");
+        }
+        function toggle(){
+            var p=document.getElementById("page");
+            p.classList.toggle("dark");
+            localStorage.setItem("theme",p.classList.contains("dark") ? "dark" : "light");
+        }
+    </script>
+</body>
+</html>
