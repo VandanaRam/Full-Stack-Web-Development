@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #output{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        #output > div{
+            width: calc(25% - 15px);
+            box-sizing: border-box;
+            padding: 10px;
+            height: 420px;
+            text-align: center;
+        }
+        #output img{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+<body>
+   <h1>Our Products</h1>
+   <p>Discover amazing products from our collection</p>
+   <input type="text" placeholder="Search poducts.." id="searchbox">
+   <div id="output">
+
+   </div> 
+   <script>
+    let allproducts=[];
+    window.addEventListener('load',()=>{
+        let result;
+        fetch("https://fakestoreapi.com/products")
+        .then(function(response){
+            return response.json();
+        })
+        .then((products)=>{
+            allproducts=products.slice(0,20);
+            displayall(allproducts);
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    });
+
+    document.getElementById("searchbox").addEventListener('input',(event)=>{
+        const search=event.target.value.toLowerCase();
+        const filteredProducters=allproducts.filter((product)=>{
+            return product.title.toLowerCase().includes(search);
+        });
+        displayall(filteredProducters);
+    });
+
+    function displayall(productlist){
+        let html="";
+        if(productlist.length===0){
+            document.getElementById("output").innerHTML="<p>No products found</p>";
+            return;
+        }
+        productlist.forEach((product)=>{
+                html+=`<div>
+                <img src='${product.image}' width=200>
+                <p>${product.title}</p>
+                <strong>${product.price}</strong><br>
+                <strong>${product.rating.rate}(${product.rating.count} reviews)</strong><br>
+                <button>View Details</button>
+                </div>`;
+            });
+        document.getElementById("output").innerHTML=html;
+    }
+   </script>
+</body>
+</html>

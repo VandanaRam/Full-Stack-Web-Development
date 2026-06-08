@@ -3,71 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAY 5</title>
+    <title>JSON</title>
 </head>
 <body>
+    <p>JSON</p>
+    <h3>OUTPUT</h3>
     <script>
-        let cities=["Hyd","Banglore","Chennai","Delhi"];
-        document.write("Complete Array : " + cities +"<br><br>");
-        document.write("First City : "+ cities[0]+"<br>");
-        document.write("Second City : "+ cities[1]+"<br>");
-        document.write("Third City : "+ cities[2]+"<br>");
-        document.write("<h1>PUSH and POP</h1>");
-        let students=["Rahul","Anil","Kiran"];
-        document.write("Original Array : "+ students+"<br>");
-        students.push("Sunny");
-        document.write("After PUSH : "+students+"<br>");
-        students.pop();
-        document.write("After pop : "+students);
-        document.write("<h1>Splice()</h1>");
-        students.splice(1,1);
-        document.write("After Slice : "+students+"<br>");
-        let index=students.indexOf('Rahul');
-        if(index!==-1){
-            students.splice(index,1);
+        let jsonText=`{
+        "name":"Vandana",
+        "age":20,
+        "location":"Idukallu"
+        }`;
+        let data=JSON.parse(jsonText);
+        document.write("Name : "+data.name+"<br>");
+        document.write("Age : "+data.age+"<br>");
+        document.write("Location : "+data.location+"<br>");
+        jsonText=`[
+        "HTML","CSS","JS","JSON"
+        ]`;
+        data=JSON.parse(jsonText);
+        document.write("<h3>Courses</h3>");
+        for(let i=0;i<data.length;i++){
+            document.write((i+1)+" . "+data[i]+"<br>");
         }
-        document.write("Students array now : "+students+"<br>");
-        let marks=[82 , 90, 88, 95];
-        for(let i=0;i<marks.length;i++)
+        jsonText=`[{
+            "id":1,
+            "name":"Ravi",
+            "marks":85
+        },
         {
-            document.write("Students "+(i+1)+"Marks : "+marks[i]+"<br>");
+            "id":2,
+            "name":"Kiran",
+            "marks":90
+        },
+        {
+            "id":3,
+            "name":"Anitha",
+            "marks":95
+        }]`;
+        data=JSON.parse(jsonText);
+        document.write("<h3>Students</h3>");
+        for(let i=0;i<data.length;i++)
+        {
+            document.write("ID : "+data[i].id+"<br>")
+            document.write("Name : "+data[i].name+"<br>")
+            document.write("Marks : "+data[i].marks+"<hr>")
         }
-        document.write("<h1>Filter()</h1>");
-        let mark=[23,45,78,56,89,67];
-        let passedStudents=mark.filter(function(mark){
-            return mark>=50;
-        });
-        document.write("Original Marks : "+mark+"<br>");
-        document.write("Passed Students : "+ passedStudents);
-        let updatedMarks=mark.filter(function(mark){
-            return mark+5;
-        });
-        document.write("Original Marks : "+mark+"<br>");
-        document.write("Passed Students : "+ updatedMarks);
-        document.write("<h1>Student Object</h1>");
-        let student={
-            name:'vandana',
-            age:20,
-            course:'JavaScript',
-            marks:85,
-            address:{
-                city:"KURNOOL",
-                state:"AP",
-                pincode:518007,
+        jsonText=`{
+        "name":"Vandana",
+        "age":20,
+        "address":{
+            "door_no":"25-a",
+            "street":"OC colony",
+            "city":"Idukallu",
+            "state":"Andhra Pradesh"
+        }
+        }`;
+        data=JSON.parse(jsonText);
+        document.write("Name : "+data.name+"<br>");
+        document.write("Age : "+data.age+"<br>");
+        document.write("<strong>Address</strong><br>Door NO : "+data.address.door_no+"<br>");
+        document.write("Street : "+data.address.street+"<br>");
+        document.write("City : "+data.address.city+"<br>");
+        document.write("State : "+data.address.state+"<br>");
+        jsonText=`{
+            "college_name":"GPREC",
+            "students":[
+            {
+                "roll_no":1,
+                "name":"Ravi"
+            },
+            {
+                "roll_no":2,
+                "name":"Kiran"
             }
-        };
-        document.write("<h2>Student Details</h2>");
-        document.write("Name : "+student.name+"<br>");
-        document.write("Age : "+student.age+"<br>");
-        document.write("Course : "+student.course+"<br>");
-        document.write("Marks : "+student.marks+"<br>");       
-        student.marks=90;
-        document.write("Upadated Marks : "+student.marks+"<br>");
-        document.write("<h1>Nested Object</h1>");
-        document.write("<h3>Address</h3>");
-        document.write("City : "+student.address.city+"<br>");
-        document.write("State : "+student.address.state+"<br>");
-        document.write("PinCode : "+student.address.pincode+"<br>")
+            ]
+        }`;
+        data=JSON.parse(jsonText);
+        document.write("<h3>" +data.college_name+"</h3>");
+        for(let i=0;i<data.students.length;i++)
+        {
+            document.write("Roll No: "+data.students[i].roll_no+"<br>");
+            document.write("Name: "+data.students[i].name+"<hr>");
+        }
+        jsonText=`{
+            "status":true,
+            "message":"login Successful",
+            "data":{
+                "user_id":101,
+                "name":"Ravi",
+                "email":"ravi@gmail.com"
+            }
+        }`;
+        data=JSON.parse(jsonText);
+        document.write("Status : "+data.status+"<br>");
+        document.write("Message : "+data.message+"<br>");
+        document.write("<h3>User Data</h3>");
+        document.write("USER_ID : "+data.data.user_id+"<br>");
+        document.write("USER NAME : "+data.data.name+"<br>");
+        document.write("EMAIL : "+data.data.email+"<br>");
+        jsonText=`
+        [
+            {
+                "id":1,
+                "task":"Learn JSON",
+                "completed":true
+            },
+            {
+                "id":2,
+                "task":"Practice JavaScript",
+                "completed":false
+            }
+        ]`;
+        data=JSON.parse(jsonText);
+        document.write("<h3>:Tasks:</h3>");
+        for(let i=0;i<data.length;i++){
+            document.write("ID : "+data[i].id+"<br>");
+            document.write("Task : "+data[i].task+"<br>");
+            document.write("Completed : "+data[i].completed+"<br>");
+        }
+        jsonText=`{
+        "cart_id":101,
+        "user_id":1,
+        "items":[
+            {
+                "product_id":1,
+                "product_name":"Laptop",
+                "qty":1,
+                "price":45000
+            },
+            {
+                "product_id":2,
+                "product_name":"Mouse",
+                "qty":2,
+                "price":500
+            }
+        ]
+        }`;
+        data=JSON.parse(jsonText);
+        document.write("<h3>Cart Details</h3>");
+        document.write("Cart ID : "+data.cart_id+"<br>");
+        document.write("User ID : "+data.user_id+"<br>");
+        document.write("Items : "+"<hr>");
+        for(let i=0;i<data.items.length;i++)
+        {
+            document.write("Product Id : "+data.items[i].product_id+"<br>");
+            document.write("Product Name : "+data.items[i].product_name+"<br>");
+            document.write("Quantity : "+data.items[i].qty+"<br>");
+            document.write("Price : "+data.items[i].price+"<hr>");
+        }
     </script>
 </body>
 </html>
